@@ -1,30 +1,59 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+    <div class="pagina">
+        <div class="menu">
+            <router-link to="/" class="objMenu">Inicio</router-link>
+            <router-link to="/clasificacion" class="objMenu">Clasificación</router-link>
+            <router-link to="/jornadas" class="objMenu">Jornadas</router-link>
+            <router-link to="/nuevaJornada" class="objSubmenu">Nuevo Partido</router-link>
+            <router-link to="/equipos" class="objMenu">Equipos</router-link>
+            <router-link to="/nuevoJugador" class="objSubmenu">Nuevo Jugador</router-link>
+            <router-link to="/borrarJugador" class="objSubmenu">Eliminar Jugador</router-link>
+        </div>
+        <div class="cuerpo">
+    
+        </div>
+        <router-view/>
+    </div>
 </template>
 
+<script>
+export default {
+    data() {
+        return {
+
+        };
+    },
+    methods: {
+
+    }
+};
+</script>
+  
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.pagina {
+  
+  display: flex;
 }
 
-nav {
-  padding: 30px;
+.menu {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.objMenu {
+    padding: 10px;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.objSubmenu {
+    padding: 5px;
+    padding-left: 20px;
 }
+
+.cuerpo {
+    flex: 1;
+    background-color: azure;
+}
+
 </style>
