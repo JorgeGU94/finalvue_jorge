@@ -30,8 +30,11 @@ export default {
 </script>
   
 <style>
+body {
+    margin: 0;
+}
 .pagina {
-  
+  height: 100vh;
   display: flex;
 }
 
