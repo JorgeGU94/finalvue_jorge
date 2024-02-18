@@ -9,9 +9,6 @@
             <router-link to="/nuevoJugador" class="objSubmenu">Nuevo Jugador</router-link>
             <router-link to="/borrarJugador" class="objSubmenu">Eliminar Jugador</router-link>
         </div>
-        <div class="cuerpo">
-    
-        </div>
         <router-view/>
     </div>
 </template>
@@ -30,33 +27,40 @@ export default {
 </script>
   
 <style>
+/* Estilos CSS mejorados */
 body {
-    margin: 0;
+  margin: 0;
+  font-family: Arial, sans-serif; /* Utiliza una fuente común para mejorar la legibilidad */
 }
+
 .pagina {
   height: 100vh;
   display: flex;
 }
 
 .menu {
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
-    background-color: aquamarine;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #3f51b5; /* Cambia el color de fondo del menú */
+  color: #fff; /* Cambia el color del texto del menú a blanco */
 }
 
-.objMenu {
-    padding: 10px;
+.objMenu,
+.objSubmenu {
+  padding: 10px;
+  color: #fff; /* Cambia el color del texto de los enlaces */
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+  transition: background-color 0.3s; /* Añade una transición suave al cambio de color de fondo */
+}
+
+.objMenu:hover,
+.objSubmenu:hover {
+  background-color: #6573c3; /* Cambia el color de fondo al pasar el cursor sobre los enlaces */
 }
 
 .objSubmenu {
-    padding: 5px;
-    padding-left: 20px;
-}
-
-.cuerpo {
-    flex: 1;
-    background-color: azure;
+  padding-left: 20px; /* Añade un espacio adicional para los submenús */
 }
 
 </style>
