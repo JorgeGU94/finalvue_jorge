@@ -6,6 +6,7 @@
             <router-link to="/jornadas" class="objMenu">Jornadas</router-link>
             <router-link to="/nuevaJornada" class="objSubmenu">Nuevo Partido</router-link>
             <router-link to="/equipos" class="objMenu">Equipos</router-link>
+            <router-link to="/jugadores" class="objMenu">Jugadores</router-link>
             <router-link to="/nuevoJugador" class="objSubmenu">Nuevo Jugador</router-link>
             <router-link to="/borrarJugador" class="objSubmenu">Eliminar Jugador</router-link>
         </div>
