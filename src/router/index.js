@@ -3,9 +3,11 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Inicio from '../views/InicioVista.vue';
 import Clasificacion from '../views/ClasificacionVista.vue';
 import Jornadas from '../views/JornadasVista.vue';
+import NuevoPartido from '../views/NuevoPartidoVista.vue'; 
 import Equipos from '../views/EquiposVista.vue';
 import Jugadores from '../views/JugadoresVista.vue';
 import NuevoJugador from '../views/NuevoJugadorVista.vue';
+import EliminarJugador from '../views/EliminarJugadorVista.vue';
 
 const routes = [
   {
@@ -24,6 +26,11 @@ const routes = [
     component: Jornadas
   },
   {
+    path: '/nuevoPartido',
+    name: 'NuevoPartido',
+    component: NuevoPartido
+  },
+  {
     path: '/equipos',
     name: 'Equipos',
     component: Equipos
@@ -37,7 +44,12 @@ const routes = [
     path: '/nuevoJugador',
     name: 'NuevoJugador',
     component: NuevoJugador
-  }
+  },
+  {
+    path: '/eliminarJugador',
+    name: 'EliminarJugador',
+    component: EliminarJugador
+  },
 ];
 
 const router = createRouter({
