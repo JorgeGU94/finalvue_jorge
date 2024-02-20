@@ -1,21 +1,20 @@
 <template>
-<form method="POST" @submit.prevent="insertarJugador(equipoSeleccionado)">
-    <label for="nombre">Nombre del Jugador</label><br>
-    <input type="text" name="nombre" v-model="nombre" required><br>
-    <label for="equipo">Equipo del Jugador</label><br>
-    <select name="equipo" v-model="equipoSeleccionado" v-if="equipoP == ''">
-        <option value="" disabled selected>Seleccione un equipo</option>
-        <option v-for="equipo in clubs" :key="equipo" :value="equipo.name">{{ equipo.name }}</option>
-    </select>
-    <select name="equipo" v-model="equipoSeleccionado" v-else>
-        <option :value="equipoP" selected>{{ equipoP }}</option>
-    </select>
-    <br>
-    <label for="goles">Goles del Jugador</label><br>
-    <input type="number" name="goles" v-model="goles" required><br>
-    <input type="submit" value="Añadir Jugador">
-</form>
-
+    <form method="POST" @submit.prevent="insertarJugador(equipoSeleccionado)">
+        <label for="nombre">Nombre del Jugador</label><br>
+        <input type="text" name="nombre" v-model="nombre" required><br>
+        <label for="equipo">Equipo del Jugador</label><br>
+        <select name="equipo" v-model="equipoSeleccionado" v-if="equipoP == ''">
+            <option value="" disabled selected>Seleccione un equipo</option>
+            <option v-for="equipo in clubs" :key="equipo" :value="equipo.name">{{ equipo.name }}</option>
+        </select>
+        <select name="equipo" v-model="equipoSeleccionado" v-else>
+            <option :value="equipoP" selected>{{ equipoP }}</option>
+        </select>
+        <br>
+        <label for="goles">Goles del Jugador</label><br>
+        <input type="number" name="goles" v-model="goles" required><br>
+        <input type="submit" value="Añadir Jugador">
+    </form>
 </template>
 
 <script>
