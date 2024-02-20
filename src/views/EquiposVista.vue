@@ -1,23 +1,31 @@
 <template>
     <div class="contenedor">
         <h1>Equipos Liga</h1>
-        <div v-for="equipo in clubs" :key="equipo">
+        <div v-for="equipo in clubs" :key="equipo.name">
             <h3>{{ equipo.name }}</h3>
             <ul v-for="jugador in players" :key="jugador">
                 <li v-if="equipo.name == jugador.team">{{ jugador.name }}</li>
             </ul>
-            <input type="button" value="Nuevo Jugador">
+            <input type="button" value="Nuevo Jugador" @click="mostrarFormulario(equipo.name)">
         </div>
+    </div>
+    <div :hidden="oculto">
+        <NuevoJugadorCompVue :equipoP="equipoParam"></NuevoJugadorCompVue>
     </div>
 </template>
 
 <script>
+import NuevoJugadorCompVue from '@/components/NuevoJugadorComp.vue';
+
 export default {
     name: "equiposVista",
+    components: {NuevoJugadorCompVue},
     data() {
         return {
             clubs: {},
-            players: {}
+            players: {},
+            oculto: true,
+            equipoParam: ""
         }
     },
     methods: {
@@ -30,6 +38,11 @@ export default {
             fetch("http://localhost:3000/players")
             .then(response => response.json())
             .then(json => this.players = json)
+        },
+        mostrarFormulario(param) {
+            this.oculto = false;
+            this.equipoParam = param;
+            console.log(this.equipoParam);
         }
 
     },

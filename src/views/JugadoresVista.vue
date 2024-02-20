@@ -6,9 +6,17 @@
                 <li v-for="equipo in clubs" :key="equipo" @click="mostrarJugadores(equipo.name)">{{ equipo.name }}</li>
             </ul>
         </div>
-        <div>
+        <div v-if="jugadoresEquipo.length >= 0">
+            <h3>Jugadores</h3>
             <ul>
-                <li v-for="jugador in jugadoresEquipo" :key="jugador">{{ jugador.name }}</li>
+                <li v-for="jugador in jugadoresEquipo" :key="jugador" @click="mostrarDatosJugadores(jugador.id)">{{ jugador.name }}</li>
+            </ul>
+        </div>
+        <div v-if="datosJugadores.length > 0">
+            <h5>Datos Jugador</h5>
+            <ul v-for="dato in datosJugadores" :key="dato">
+                <li>{{ dato.team }}</li>
+                <li>{{ dato.scores }}</li>
             </ul>
         </div>
     </div>
@@ -21,7 +29,8 @@ export default {
         return {
             clubs: {},
             players: {},
-            jugadoresEquipo: {}
+            jugadoresEquipo: {},
+            datosJugadores: [],
         }
     },
     methods: {
@@ -35,10 +44,15 @@ export default {
             .then(response => response.json())
             .then(json => this.players = json)
         },
-        mostrarJugadores() {
-            // if () {
-
-            // }
+        mostrarJugadores(param) {
+            fetch("http://localhost:3000/players?team=" + param)
+            .then(response => response.json())
+            .then(json => this.jugadoresEquipo = json)
+        },
+        mostrarDatosJugadores(param) {
+            fetch("http://localhost:3000/players?id=" + param)
+            .then(response => response.json())
+            .then(json => this.datosJugadores = json)
         }
 
     },

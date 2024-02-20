@@ -5,7 +5,7 @@ import Clasificacion from '../views/ClasificacionVista.vue';
 import Jornadas from '../views/JornadasVista.vue';
 import Equipos from '../views/EquiposVista.vue';
 import Jugadores from '../views/JugadoresVista.vue';
-
+import NuevoJugador from '../views/NuevoJugadorVista.vue';
 
 const routes = [
   {
@@ -32,6 +32,11 @@ const routes = [
     path: '/jugadores',
     name: 'Jugadores',
     component: Jugadores
+  },
+  {
+    path: '/nuevoJugador',
+    name: 'NuevoJugador',
+    component: NuevoJugador
   }
 ];
 
