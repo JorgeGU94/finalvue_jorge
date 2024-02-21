@@ -9,7 +9,10 @@
             <div v-for="partido in matches" :key="partido">
                 <p>Fecha del Partido: {{ partido.date }}</p>
                 <p v-if="partido.score != null">{{ partido.team1 }} {{ partido.score[0] }} - {{ partido.score[1] }} {{ partido.team2 }}</p>
-                <p v-else>{{ partido.team1 }} <input type="text" size="2"> - <input type="text" size="2"> {{ partido.team2 }}</p>
+                <div v-else>
+                    <p>{{ partido.team1 }} <input type="text" size="2" v-model="goles1"> - <input type="text" size="2" v-model="goles2"> {{ partido.team2 }}</p>
+                    <input type="button" value="Insertar resultado" @click="insertarResultado(partido.id, goles1, goles2)">
+                </div>
             </div>
         </div>
     </div>
@@ -23,7 +26,7 @@ export default {
             matches: {},
             ultimaJornada: {},
             numJornadas: "",
-            jornadaSeleccionada: ""
+            jornadaSeleccionada: "",
         }
     },
     methods: {
@@ -52,6 +55,35 @@ export default {
             fetch("http://localhost:3000/matches?round=Jornada " + param)
             .then(response => response.json())
             .then(json => this.matches = json)
+        },
+        insertarResultado(idPartido, goles1, goles2){
+            let resultado = [goles1, goles2];
+            let url = "http://localhost:3000/matches?id=" + idPartido;
+            let aux = [];
+            
+            fetch(url)
+            .then(response => response.json())
+            .then(json => {
+                aux = json;
+                aux[0].score = resultado;
+                console.log(aux);
+                
+                let init = {
+                method: "PUT",
+                body: JSON.stringify(aux),
+                headers: { "Content-Type": "application/json" },
+                };
+
+                fetch(url, init)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Error al actualizar los resultados');
+                    }
+                    return response.json();
+                })
+                .catch((error) => console.error(error));
+            })
+
         }
     },
     created() {

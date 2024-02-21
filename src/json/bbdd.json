@@ -1552,6 +1552,13 @@
       "date": "2020-12-30",
       "team1": "Elche CF",
       "team2": "Real Madrid"
+    },
+    {
+      "round": "Jornada 20",
+      "date": "2024-02-02",
+      "team1": "SD Eibar",
+      "team2": "RC Celta Vigo",
+      "id": 158
     }
   ],
   "players": [

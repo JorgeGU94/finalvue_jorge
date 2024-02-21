@@ -55,7 +55,36 @@ export default {
 
 <style>
 .contenedor {
-    height: 100vh;
-    overflow: scroll;
+  overflow: scroll;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1, h3 {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+input[type="button"] {
+  padding: 5px 10px;
+  background-color: #3f51b5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="button"]:hover {
+  background-color: #6573c3;
 }
 </style>

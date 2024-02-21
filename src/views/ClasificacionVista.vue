@@ -49,6 +49,49 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.jugadores {
+  margin-top: 20px;
+}
+
+.jugadores h3 {
+  margin-bottom: 10px;
+}
+
+.jugadores p {
+  margin: 5px 0;
+}
 
 </style>

@@ -12,7 +12,7 @@
         </select>
         <br>
         <label for="goles">Goles del Jugador</label><br>
-        <input type="number" name="goles" v-model="goles" required><br>
+        <input type="number" name="goles" v-model="goles" required><br><br>
         <input type="submit" value="Añadir Jugador">
     </form>
 </template>
@@ -54,7 +54,6 @@ export default {
 
             this.nombre = "";
             this.goles = "";
-            // lo que coños que resetee el select
         }
     },
     created() {

@@ -110,6 +110,48 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2, h3, h5 {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.datos-jugador {
+  margin-top: 20px;
+}
+
+.datos-jugador p {
+  margin-bottom: 5px;
+}
+
+input[type="button"] {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #3f51b5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="button"]:hover {
+  background-color: #6573c3;
+}
 
 </style>

@@ -28,10 +28,9 @@ export default {
 </script>
   
 <style>
-/* Estilos CSS mejorados */
 body {
   margin: 0;
-  font-family: Arial, sans-serif; /* Utiliza una fuente común para mejorar la legibilidad */
+  font-family: Arial, sans-serif;
 }
 
 .pagina {
@@ -43,25 +42,63 @@ body {
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
-  background-color: #3f51b5; /* Cambia el color de fondo del menú */
-  color: #fff; /* Cambia el color del texto del menú a blanco */
+  background-color: #3f51b5;
+  color: #fff;
 }
 
-.objMenu,
-.objSubmenu {
+.objMenu, .objSubmenu {
   padding: 10px;
-  color: #fff; /* Cambia el color del texto de los enlaces */
-  text-decoration: none; /* Quita el subrayado de los enlaces */
-  transition: background-color 0.3s; /* Añade una transición suave al cambio de color de fondo */
+  color: #fff;
+  text-decoration: none; 
+  transition: background-color 0.3s; 
 }
 
 .objMenu:hover,
 .objSubmenu:hover {
-  background-color: #6573c3; /* Cambia el color de fondo al pasar el cursor sobre los enlaces */
+  background-color: #6573c3;
 }
 
 .objSubmenu {
-  padding-left: 20px; /* Añade un espacio adicional para los submenús */
+  padding-left: 20px;
+}
+
+.router-view {
+  flex: 1;
+  padding: 20px; 
+  background-color: #f0f0f0; 
+}
+
+.formulario {
+  max-width: 400px; 
+  margin: 0 auto; 
+  background-color: #fff; 
+  padding: 20px; 
+  border-radius: 5px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+input[type="text"], input[type="number"], select {
+  width: 100%; 
+  margin-bottom: 10px;
+  padding: 10px; 
+  border: 1px solid #ccc;
+  border-radius: 4px; 
+  box-sizing: border-box; 
+}
+
+input[type="submit"] {
+  width: 100%; 
+  background-color: #3f51b5; 
+  color: #fff; 
+  padding: 10px; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #6573c3; 
 }
 
 </style>
